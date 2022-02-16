@@ -1,0 +1,63 @@
+<header>
+  <nav id="navMenu" [class]="navClass">
+    <div class="row ">
+      <div class="col-xl-3 d-flex align-middle justify-content-center align-items-center text-center">
+        <div class="align-middle">
+          <h2 class="text-dark"><b>REDLEG CONSTRUCTION</b></h2>
+        </div>
+      </div>
+      <div class="col-6 d-flex align-middle justify-content-center align-items-center text-center">
+        <img src="../../assets/crossed-hammers.png" alt="sample logo" style="border: none" />
+      </div>
+      <div class="col-3 d-flex align-middle justify-content-center align-items-center text-center">
+        <div class="row">
+          <div class="col text-dark">
+            <h3>
+              (513) 582-6600
+            </h3>
+          </div>
+          <div class="col text-dark" style="cursor: pointer;" (click)="openContactModal(content)">
+            <h3>
+              <b>Contact Us</b>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Contact: RedLeg Construction</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" #name>
+        </div>
+      </div>
+      <br />
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="email" placeholder="email@example.com" #email>
+        </div>
+      </div>
+      <h5>or</h5>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" #phone>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button [hidden]="loading" type="button" class="btn btn-outline-dark" (click)="sendRequest(name.value, email.value, phone.value)">Submit</button>
+    <div [hidden]="!loading" class="spinner-border text-success" role="status"></div>
+  </div>
+</ng-template>

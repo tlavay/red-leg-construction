@@ -1,0 +1,142 @@
+<div>
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item" role="button">
+      <a [class]="getTabClass('home')" (click)="setTab('home')">Home</a>
+    </li>
+    <li class="nav-item" role="button">
+      <a [class]="getTabClass('about')" (click)="setTab('about')">About</a>
+    </li>
+    <li class="nav-item" role="button">
+      <a [class]="getTabClass('services')" (click)="setTab('services')">Services</a>
+    </li>
+    <li class="nav-item" role="button">
+      <a class="nav-link text-dark" (click)="openContactModal(content)">Contact Us</a>
+    </li>
+  </ul>
+
+  <div class="container text-center" [hidden]="hidden('home')">
+    <h1 class="display-1">Redleg Construction</h1>
+    <p class="text-center">
+      Building home revenovation dreams in the greater Cincinnati area for over ten years.
+    </p>
+    <div class="row">
+      <div class="col-6">
+        <h1>Addition / Remodel</h1>
+        <img class="img-fluid img-thumbnail" src="../../assets/image4.jpeg" />
+      </div>
+      <div class="col-6">
+        <h1>Siding / Exterior Trim</h1>
+        <img class="col img-fluid img-thumbnail" src="../../assets/image1.jpeg" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h1>Porch / Deck</h1>
+        <img class="img-fluid img-thumbnail" src="../../assets/deck.jpeg" />
+      </div>
+      <div class="col-6">
+        <h1>Garages</h1>
+        <img class="img-fluid img-thumbnail" src="../../assets/image5.jpeg" />
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5 text-center" [hidden]="hidden('services')">
+    <h1 class="display-1 text-center">Services</h1>
+    <div class="row">
+      <div class="col-6">
+        <h1>Addition / Remodel</h1>
+        <p class="text-center">
+          If your thinking about adding on to
+          your existing home or updating
+          entirely we can help you from design
+          to finishing touches.
+        </p>
+      </div>
+      <div class="col-6">
+        <h1>Siding / Exterior Trim</h1>
+        <p class="text-center">
+          Update the look of your home
+          with new siding and exterior
+          trim.Vinyl or Hardie siding will
+          not only give your home a fresh
+          new look but will better protect
+          it from the elements.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h1>Porch / Deck</h1>
+        <p class="text-center">
+          Take advantage of your outdoor
+          living space with a new porch or
+          deck. We are a full service builder
+          that will provide a quality
+          porch/deck from ground to roof.
+        </p>
+      </div>
+      <div class="col-6">
+        <h1>Garages</h1>
+        <p class="text-center">
+          Add storage space and protect
+          your vehicles with a new
+          garage. With an attached
+          garage you can go to and
+          from your vehicle without
+          stepping in the elements.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5 col-xl-6 col-lg-6" [hidden]="hidden('about')">
+    <h1 class="display-1 text-center">About</h1>
+    <p>
+      Redleg Construction serves the greater Cincinnati area with over a
+      decade of building experience. Our goal is to take your dream and
+      make it a reality.
+
+      As a veteran owned business we understand the pride that comes with
+      hard work and dedication to the project. We also understand that it is
+      the attention to detail that counts.
+
+      At Redleg Construction we offer a 10 year transferable guarantee on
+      anything we build. Giving you a piece of mind in the quality product
+      you receive.
+    </p>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Contact: RedLeg Construction</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" #name>
+        </div>
+      </div>
+      <br />
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="email" placeholder="email@example.com" #email>
+        </div>
+      </div>
+      <h5>or</h5>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" #phone>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button [hidden]="loading" type="button" class="btn btn-outline-dark" (click)="sendRequest(name.value, email.value, phone.value)">Submit</button>
+    <div [hidden]="!loading" class="spinner-border text-success" role="status"></div>
+  </div>
+</ng-template>
