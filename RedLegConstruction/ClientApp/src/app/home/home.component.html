@@ -104,6 +104,12 @@
       you receive.
     </p>
   </div>
+  <div style="display: none;">home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel</div>
+  <div style="display: none;">deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck</div>
+  <div style="display: none;">remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel</div>
+  <div style="display: none;">carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry</div>
+  <div style="display: none;">contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor</div>
+  <div style="display: none;">home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition</div>
 </div>
 
 <ng-template #content let-modal>
@@ -131,7 +137,7 @@
         <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="phone" #phone>
-        </div>
+        </div> 
       </div>
     </form>
   </div>
@@ -139,10 +145,4 @@
     <button [hidden]="loading" type="button" class="btn btn-outline-dark" (click)="sendRequest(name.value, email.value, phone.value)">Submit</button>
     <div [hidden]="!loading" class="spinner-border text-success" role="status"></div>
   </div>
-  <div style="display: none;">home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel,home remodel</div>
-  <div style="display: none;">deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck,deck</div>
-  <div style="display: none;">remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel,remodel</div>
-  <div style="display: none;">carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry,carpentry</div>
-  <div style="display: none;">contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor,contractor</div>
-  <div style="display: none;">home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition,home addition</div>
 </ng-template>
